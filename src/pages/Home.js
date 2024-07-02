@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../context/ThemeContext";
 
 const HomeContainer = styled.div`
   display: flex;
@@ -9,21 +10,27 @@ const HomeContainer = styled.div`
   justify-content: center;
   height: 80vh;
   text-align: center;
+  margin: 0;
   margin-bottom: 5rem;
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
+
   @media (max-width: 768px) {
-    height: 75vh;
+    height: 72vh;
   }
 `;
 
 const Title = styled.h1`
-  font-size: 2.5rem;
-  color: #333;
-  margin-top: 1rem;
+  font-size: 2.7rem;
+  color: ${({ theme }) => theme.text};
+  margin-top: ${({ theme }) => theme.homeH1MarginControl};
+  margin-right: 0;
+  margin-left: 0;
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.2rem;
-  color: #666;
+  font-size: 1rem;
+  color: ${({ theme }) => theme.text};
   margin: 0;
 `;
 
@@ -31,7 +38,6 @@ const VideoContainer = styled.div`
   width: 40%;
   height: auto;
   background-color: none;
-  overflow: hidden;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -45,7 +51,7 @@ const StyledVideo = styled.video`
 `;
 
 const HighlightLink = styled(Link)`
-  color: darkred;
+  color: ${({ theme }) => theme.hihlightedText};
   text-decoration: none;
   font-weight: bold;
 
@@ -56,6 +62,8 @@ const HighlightLink = styled(Link)`
 
 const Home = () => {
   const videoRef = useRef(null);
+  const { theme } = useContext(ThemeContext);
+  const [videoKey, setVideoKey] = useState(0);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -100,21 +108,22 @@ const Home = () => {
         observer.unobserve(video);
       }
     };
-  }, []);
+  }, [videoKey]);
+
+  useEffect(() => {
+    setVideoKey((prevKey) => prevKey + 1);
+  }, [theme.videoSrc]);
 
   return (
-    <HomeContainer>
+    <HomeContainer theme={theme}>
       <VideoContainer>
-        <StyledVideo ref={videoRef} playsInline muted>
-          <source
-            src={`${process.env.PUBLIC_URL}/media2.mp4`}
-            type="video/mp4"
-          />
+        <StyledVideo key={videoKey} ref={videoRef} playsInline muted>
+          <source src={theme.videoSrc} type="video/mp4" />
           Your browser does not support the video tag.
         </StyledVideo>
       </VideoContainer>
-      <Title>Welcome to Kimi J'adore's Avenue</Title>
-      <Subtitle>
+      <Title theme={theme}>Welcome to Kimi J'adore's Avenue</Title>
+      <Subtitle theme={theme}>
         Explore my{" "}
         <HighlightLink to="/about-me">captivating journey</HighlightLink> and{" "}
         <HighlightLink to="/my-contents">stunning creations</HighlightLink>,

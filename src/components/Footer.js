@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Foot = styled.footer`
   color: #333;
-  text-align: left;
+  text-align: center;
   padding: 1rem 0;
   margin-top: 3rem;
   font-size: smaller;

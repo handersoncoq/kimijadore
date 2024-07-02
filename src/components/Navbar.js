@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+// src/components/Navbar.js
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { FaBars, FaTimes } from "react-icons/fa"; // Import FaTimes
+import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Nav = styled.nav`
-  background: #ffc0cb;
+  background: ${({ theme }) => theme.background};
   padding: 1rem 0;
   display: flex;
   justify-content: space-between;
@@ -17,16 +19,15 @@ const NavList = styled.ul`
   justify-content: space-around;
   padding: 0;
   margin: 0;
-
-  display: flex;
   flex-direction: row;
   position: absolute;
   top: 60px;
   right: 0;
-  background: #ffc0cb;
+  background: ${({ theme }) => theme.background};
   width: 100%;
   text-align: right;
-  padding-right: 1rem;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
   transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-20px)")};
   opacity: ${({ open }) => (open ? "1" : "0")};
   pointer-events: ${({ open }) => (open ? "auto" : "none")};
@@ -36,7 +37,7 @@ const NavList = styled.ul`
 `;
 
 const NavItem = styled.li`
-  color: white;
+  color: ${({ theme }) => theme.text};
   margin: 0;
   margin: 1rem 0;
 
@@ -46,11 +47,12 @@ const NavItem = styled.li`
 `;
 
 const NavLink = styled(Link)`
-  color: darkred;
+  color: ${({ theme }) => theme.text};
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    color: ${({ theme }) => theme.brandName};
+    border-bottom: 1px solid ${({ theme }) => theme.text};
   }
 `;
 
@@ -58,51 +60,73 @@ const Hamburger = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #333;
+  background: ${({ theme }) => theme.hamburgerBackground};
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  color: #fff;
+  color: ${({ theme }) => theme.hamburgerBars};
   cursor: pointer;
 `;
 
+const ThemeSwitch = styled.button`
+  background: none;
+  border: none;
+  color: ${({ theme }) => theme.text};
+  cursor: pointer;
+  margin-left: 1rem;
+`;
+
 const StyledFaBars = styled(FaBars)`
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
 `;
 
 const StyledFaTimes = styled(FaTimes)`
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
 `;
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const toggleMenu = () => {
     setOpen(!open);
   };
 
   return (
-    <Nav>
-      <Link to="/" style={{ color: "#333", textDecoration: "none" }}>
+    <Nav theme={theme}>
+      <Link to="/" style={{ color: theme.brandName, textDecoration: "none" }}>
         <h1>Kimi J'adore</h1>
       </Link>
-      <Hamburger onClick={toggleMenu}>
+      <Hamburger onClick={toggleMenu} theme={theme}>
         {open ? <StyledFaTimes /> : <StyledFaBars />}
       </Hamburger>
-      <NavList open={open}>
-        <NavItem>
-          <NavLink to="/">Home</NavLink>
+      <NavList open={open} theme={theme}>
+        <NavItem theme={theme}>
+          <NavLink to="/" theme={theme}>
+            Home
+          </NavLink>
+        </NavItem>
+        <NavItem theme={theme}>
+          <NavLink to="/about-me" theme={theme}>
+            About Me
+          </NavLink>
+        </NavItem>
+        <NavItem theme={theme}>
+          <NavLink to="/my-contents" theme={theme}>
+            My Contents
+          </NavLink>
+        </NavItem>
+        <NavItem theme={theme}>
+          <NavLink to="/contact-me" theme={theme}>
+            Contact Me
+          </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/about-me">About Me</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to="/my-contents">My Contents</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to="/contact-me">Contact Me</NavLink>
+          <ThemeSwitch onClick={toggleTheme} theme={theme}>
+            {theme.name === "dark" ? <FaSun /> : <FaMoon />}
+          </ThemeSwitch>
         </NavItem>
       </NavList>
     </Nav>
