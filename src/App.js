@@ -33,11 +33,9 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const basename = process.env.PUBLIC_URL;
-
 function App() {
   return (
-    <Router basename={basename}>
+    <Router>
       <GlobalStyle />
       <Navbar />
       <Routes>
