@@ -42,9 +42,6 @@ const StyledVideo = styled.video`
   height: auto;
   background-color: none;
   object-fit: cover;
-  @supports (-webkit-touch-callout: none) {
-    filter: brightness(1.02) contrast(1.05);
-  }
 `;
 
 const HighlightLink = styled(Link)`
