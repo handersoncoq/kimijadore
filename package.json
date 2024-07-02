@@ -1,8 +1,8 @@
 {
+  "homepage": "http://handersoncoq.github.io/kimijadore",
   "name": "kimijadore",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://handersoncoq.github.io/kimijadore",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
