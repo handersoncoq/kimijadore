@@ -30,7 +30,7 @@ const themes = {
 };
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(themes.dark);
+  const [theme, setTheme] = useState(themes.light);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
