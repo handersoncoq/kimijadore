@@ -7,6 +7,7 @@ import Contents from "./pages/Contents";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import NotFound from "./pages/NotFound";
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -42,6 +43,7 @@ function App() {
         <Route path="/about-me" element={<About />} />
         <Route path="/my-contents" element={<Contents />} />
         <Route path="/contact-me" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>

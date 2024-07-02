@@ -46,7 +46,7 @@ const NavItem = styled.li`
 `;
 
 const NavLink = styled(Link)`
-  color: #333;
+  color: darkred;
   text-decoration: none;
 
   &:hover {
