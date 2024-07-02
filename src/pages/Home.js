@@ -30,6 +30,8 @@ const Subtitle = styled.p`
 const VideoContainer = styled.div`
   width: 40%;
   height: auto;
+  background-color: none;
+  overflow: hidden;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -38,7 +40,11 @@ const VideoContainer = styled.div`
 const StyledVideo = styled.video`
   width: 100%;
   height: auto;
+  background-color: none;
   object-fit: cover;
+  @supports (-webkit-touch-callout: none) {
+    filter: brightness(1.02) contrast(1.05);
+  }
 `;
 
 const HighlightLink = styled(Link)`

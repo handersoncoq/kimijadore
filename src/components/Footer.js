@@ -16,7 +16,7 @@ const Footer = () => {
 
   return (
     <Foot>
-      <p>&copy; {currentYear} Kimi J'adore Portfolio</p>
+      <p>&copy; {currentYear} Kimi J'adore. All Rights Reserved.</p>
     </Foot>
   );
 };
