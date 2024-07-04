@@ -48,6 +48,7 @@ const StyledVideo = styled.video`
   height: auto;
   background-color: none;
   object-fit: cover;
+  margin-top: ${({ theme }) => theme.homeVideoMarginControl};
 `;
 
 const HighlightLink = styled(Link)`

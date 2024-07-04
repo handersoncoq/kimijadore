@@ -15,6 +15,7 @@ const themes = {
     hamburgerBars: "#000000",
     videoSrc: `${process.env.PUBLIC_URL}/media3.mp4`,
     homeH1MarginControl: "-1rem",
+    homeVideoMarginControl: "",
   },
   light: {
     name: "light",
@@ -26,6 +27,7 @@ const themes = {
     hamburgerBars: "#ffffff",
     videoSrc: `${process.env.PUBLIC_URL}/media2.mp4`,
     homeH1MarginControl: "1rem",
+    homeVideoMarginControl: "2em",
   },
 };
 
