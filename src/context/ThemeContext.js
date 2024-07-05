@@ -15,9 +15,10 @@ const themes = {
     videoSrc: `${process.env.PUBLIC_URL}/media3.mp4`,
     homeH1MarginControl: "-1rem",
     homeVideoMarginControl: "",
-    aboutHeaderColor: {
+    aboutPage: {
       background: "#ffc0cb",
       text: "#000000",
+      pictureBlend: "screen",
     },
   },
   light: {
@@ -31,9 +32,10 @@ const themes = {
     videoSrc: `${process.env.PUBLIC_URL}/media2.mp4`,
     homeH1MarginControl: "1rem",
     homeVideoMarginControl: "2em",
-    aboutHeaderColor: {
+    aboutPage: {
       background: "#000000",
       text: "#ffc0cb",
+      pictureBlend: "multiply",
     },
   },
 };

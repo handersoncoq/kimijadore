@@ -1,36 +1,16 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { ThemeContext } from "../context/ThemeContext";
-import mirrorSelfie from "../assets/media/pictures/test_img.jpeg";
+import profilePic from "../assets/media/pictures/mirror_selfie.png";
+import { aboutPics } from "../components/Pictures";
 import Stats from "../components/Stats";
 import PictureLayout from "../components/PictureLayout";
+import Header from "../components/Header";
 
 const AboutContainer = styled.div`
   margin: 0;
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
-`;
-
-const Header = styled.div`
-  background-color: ${({ theme }) => theme.aboutHeaderColor.background};
-  color: ${({ theme }) => theme.aboutHeaderColor.text};
-  box-shadow: 1px 18px 9px rgba(0, 0, 0, 0.1);
-  border-radius: 0.3rem;
-`;
-
-const Title = styled.h1`
-  font-size: 2.8rem;
-  margin: auto 0;
-  padding: 0 1rem;
-  padding-top: 0.5rem;
-  font-family: "Allura", cursive;
-`;
-
-const Subtitle = styled.p`
-  font-size: 0.7rem;
-  padding: 0 1rem;
-  padding-bottom: 1rem;
-  margin-top: -0.8rem;
 `;
 
 const FlexRow = styled.div`
@@ -68,20 +48,15 @@ const Text = styled.p`
   }
 `;
 
-const pictures = [mirrorSelfie, mirrorSelfie, mirrorSelfie, mirrorSelfie];
-
 const About = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <AboutContainer theme={theme}>
-      <Header>
-        <Title>Kimi J'adore</Title>
-        <Subtitle>FASHION | SKINCARE | LIFESTYLE</Subtitle>
-      </Header>
+      <Header />
       <FlexRow>
         <FlexItem>
           <h1>About me</h1>
-          <Image src={mirrorSelfie} alt="Kimi J'adore" />
+          <Image src={profilePic} alt="Kimi J'adore" />
           <Text>
             Hello! <br /> I am a multi-talented lifestyle content creator who
             loves to have fun and engage with their audience. My areas of focus
@@ -105,7 +80,7 @@ const About = () => {
         </FlexItem>
       </FlexRow>
       <Stats />
-      <PictureLayout pictureArray={pictures} />
+      <PictureLayout pictureArray={aboutPics} />
     </AboutContainer>
   );
 };
