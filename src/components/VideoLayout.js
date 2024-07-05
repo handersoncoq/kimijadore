@@ -97,6 +97,7 @@ const GoToContentLink = styled.a`
 
   &:hover {
     cursor: pointer;
+    color: #ffc0cb;
   }
 `;
 
