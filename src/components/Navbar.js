@@ -33,7 +33,7 @@ const NavList = styled.ul`
   pointer-events: ${({ open }) => (open ? "auto" : "none")};
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   box-shadow: ${({ open }) => (open ? "0 2px 4px rgba(0, 0, 0, 0.1)" : "none")};
-  margin-top: ${({ open }) => (open ? "1rem" : "0")};
+  margin-top: ${({ open }) => (open ? "1.5rem" : "0")};
 `;
 
 const NavItem = styled.li`
@@ -86,6 +86,13 @@ const StyledFaTimes = styled(FaTimes)`
   height: 28px;
 `;
 
+const MenuItems = [
+  { name: "Home", link: "/" },
+  { name: "About Me", link: "/about-me" },
+  { name: "My Contents", link: "/my-contents" },
+  { name: "Contact Me", link: "/contact-me" },
+];
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -103,26 +110,13 @@ const Navbar = () => {
         {open ? <StyledFaTimes /> : <StyledFaBars />}
       </Hamburger>
       <NavList open={open} theme={theme}>
-        <NavItem theme={theme}>
-          <NavLink to="/" theme={theme}>
-            Home
-          </NavLink>
-        </NavItem>
-        <NavItem theme={theme}>
-          <NavLink to="/about-me" theme={theme}>
-            About Me
-          </NavLink>
-        </NavItem>
-        <NavItem theme={theme}>
-          <NavLink to="/my-contents" theme={theme}>
-            My Contents
-          </NavLink>
-        </NavItem>
-        <NavItem theme={theme}>
-          <NavLink to="/contact-me" theme={theme}>
-            Contact Me
-          </NavLink>
-        </NavItem>
+        {MenuItems.map((item) => (
+          <NavItem key={item.name} theme={theme}>
+            <NavLink to={item.link} theme={theme} onClick={toggleMenu}>
+              {item.name}
+            </NavLink>
+          </NavItem>
+        ))}
         <NavItem>
           <ThemeSwitch onClick={toggleTheme} theme={theme}>
             {theme.name === "dark" ? <FaSun /> : <FaMoon />}
