@@ -1,21 +1,33 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.3726c8d4.js",
+    "main.js": "/static/js/main.6bff6c34.js",
     "static/js/453.02cf7fb4.chunk.js": "/static/js/453.02cf7fb4.chunk.js",
+    "static/media/church_grwm2.mp4": "/static/media/church_grwm2.36595dcc20567b3855df.mp4",
+    "static/media/church_grwm3.mp4": "/static/media/church_grwm3.666cf4290d62be989546.mp4",
+    "static/media/church_grwm1.mp4": "/static/media/church_grwm1.b33f3197f56fe07f2b5e.mp4",
+    "static/media/lip_combo.mp4": "/static/media/lip_combo.39b2d4344da6f9fbeac2.mp4",
+    "static/media/birthday_grwm.mp4": "/static/media/birthday_grwm.2e553f84c7c15ee19e6b.mp4",
+    "static/media/modest_fit_pants_edition.mp4": "/static/media/modest_fit_pants_edition.d4241a9be91dfd6defff.mp4",
+    "static/media/unwind_with_me.mp4": "/static/media/unwind_with_me.131c0b65904dcffc3a44.mp4",
+    "static/media/grwm_bed.mp4": "/static/media/grwm_bed.4b9813160426f25f5e69.mp4",
+    "static/media/get_urwm.mp4": "/static/media/get_urwm.35224bb19847ba1f3d81.mp4",
+    "static/media/spring_dress.mp4": "/static/media/spring_dress.e3eca6d58ee6f17d6f47.mp4",
+    "static/media/black_tie_outfit.mp4": "/static/media/black_tie_outfit.38583e27a1e016aa003e.mp4",
     "static/media/church_fit1.png": "/static/media/church_fit1.2e6910e5cc8e0b0647fd.png",
     "static/media/wedding_fit.png": "/static/media/wedding_fit.63df3eb45789c2a60d61.png",
     "static/media/church_fit3.png": "/static/media/church_fit3.204c145377bf41372c4e.png",
     "static/media/casual_selfie.png": "/static/media/casual_selfie.59dee95799fc470288c2.png",
     "static/media/church_fit2.png": "/static/media/church_fit2.a16fc09632bb2c9ee2c8.png",
+    "static/media/mirror_selfie2.png": "/static/media/mirror_selfie2.3980ca8eea68b1de5979.png",
     "static/media/mirror_selfie.png": "/static/media/mirror_selfie.d630d1caedc8476e9554.png",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.3726c8d4.js.map": "/static/js/main.3726c8d4.js.map",
+    "main.6bff6c34.js.map": "/static/js/main.6bff6c34.js.map",
     "453.02cf7fb4.chunk.js.map": "/static/js/453.02cf7fb4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.3726c8d4.js"
+    "static/js/main.6bff6c34.js"
   ]
 }
