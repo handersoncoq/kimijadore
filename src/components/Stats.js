@@ -63,7 +63,7 @@ const Stats = () => {
               <FaTiktok /> TIKTOK
             </Title>
           </GradientIcon>
-          <Subtitle>72.8K+</Subtitle>
+          <Subtitle>73K+</Subtitle>
         </StatSpan>
       </ClickableSpan>
       <ClickableSpan
