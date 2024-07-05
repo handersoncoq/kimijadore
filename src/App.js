@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Switch,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contents from "./pages/Contents";
@@ -16,13 +21,15 @@ function App() {
       <Router>
         <GlobalStyle />
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about-me" element={<About />} />
-          <Route path="/my-contents" element={<Contents />} />
-          <Route path="/contact-me" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Switch>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/about-me" element={<About />} />
+            <Route path="/my-contents" element={<Contents />} />
+            <Route path="/contact-me" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Switch>
         <Footer />
       </Router>
     </ThemeProvider>
