@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -11,39 +10,54 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  top: 0;
+  margin-bottom: 1.5em;
+  z-index: 10002;
+`;
+
+const StyledHr = styled.hr`
+  border: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    #bf953f,
+    #fcf6ba,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+  margin: 0.5rem 0;
 `;
 
 const NavList = styled.ul`
   list-style: none;
-  display: flex;
-  justify-content: space-around;
   padding: 0;
   margin: 0;
-  flex-direction: row;
-  position: absolute;
-  top: 60px;
-  right: 0;
   background: ${({ theme }) => theme.background};
+  padding-bottom: 0.5rem;
+  right: 0.1em;
+  position: absolute;
+  z-index: 10002;
+  top: 60px;
   width: 100%;
-  text-align: right;
-  padding-right: 0.6rem;
-  padding-left: 0.6rem;
+  text-align: left;
+  padding-right: 1rem;
+  padding-left: 1rem;
   transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-20px)")};
   opacity: ${({ open }) => (open ? "1" : "0")};
   pointer-events: ${({ open }) => (open ? "auto" : "none")};
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   box-shadow: ${({ open }) => (open ? "0 2px 4px rgba(0, 0, 0, 0.1)" : "none")};
   margin-top: ${({ open }) => (open ? "1.5rem" : "0")};
+  @media (min-width: 768px) {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
 `;
 
 const NavItem = styled.li`
   color: ${({ theme }) => theme.text};
-  margin: 0;
-  margin: 1rem 0;
-
-  @media (min-width: 768px) {
-    margin-top: 2rem;
-  }
 `;
 
 const NavLink = styled(Link)`
@@ -51,8 +65,7 @@ const NavLink = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.brandName};
-    border-bottom: 1px solid ${({ theme }) => theme.text};
+    color: darkred;
   }
 `;
 
@@ -73,7 +86,7 @@ const ThemeSwitch = styled.button`
   border: none;
   color: ${({ theme }) => theme.text};
   cursor: pointer;
-  margin-left: 1rem;
+  margin-top: 0.5rem;
 `;
 
 const StyledFaBars = styled(FaBars)`
@@ -86,10 +99,32 @@ const StyledFaTimes = styled(FaTimes)`
   height: 28px;
 `;
 
+const StyledFaSun = styled(FaSun)`
+  width: 18px;
+  height: 18px;
+`;
+
+const StyledFaMoon = styled(FaMoon)`
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right,
+    #bf953f,
+    #fcf6ba,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+`;
+
 const MenuItems = [
   { name: "Home", link: "/" },
   { name: "About Me", link: "/about-me" },
   { name: "My Contents", link: "/my-contents" },
+  { name: "Blog", link: "/blog" },
+  { name: "Store", link: "/store" },
   { name: "Contact Me", link: "/contact-me" },
 ];
 
@@ -112,14 +147,16 @@ const Navbar = () => {
       <NavList open={open} theme={theme}>
         {MenuItems.map((item) => (
           <NavItem key={item.name} theme={theme}>
+            <StyledHr />
             <NavLink to={item.link} theme={theme} onClick={toggleMenu}>
               {item.name}
             </NavLink>
           </NavItem>
         ))}
         <NavItem>
+          <StyledHr />
           <ThemeSwitch onClick={toggleTheme} theme={theme}>
-            {theme.name === "dark" ? <FaSun /> : <FaMoon />}
+            {theme.name === "dark" ? <StyledFaSun /> : <StyledFaMoon />}
           </ThemeSwitch>
         </NavItem>
       </NavList>

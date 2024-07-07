@@ -13,7 +13,8 @@ const StatSpan = styled.span`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0.3rem 1rem;
+  margin: 0.3rem 0;
+  margin-right: 1rem;
   text-align: center;
 `;
 

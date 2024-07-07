@@ -30,8 +30,8 @@ const themes = {
     hamburgerBackground: "#000000",
     hamburgerBars: "#ffffff",
     videoSrc: `${process.env.PUBLIC_URL}/media2.mp4`,
-    homeH1MarginControl: "1rem",
-    homeVideoMarginControl: "2em",
+    homeH1MarginControl: "2rem",
+    homeVideoMarginControl: "2rem",
     aboutPage: {
       background: "#000000",
       text: "#ffc0cb",

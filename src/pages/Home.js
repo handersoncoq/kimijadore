@@ -38,6 +38,7 @@ const VideoContainer = styled.div`
   width: 40%;
   height: auto;
   background-color: transparent;
+  margin-top: ${({ theme }) => theme.homeVideoMarginControl};
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -46,9 +47,8 @@ const VideoContainer = styled.div`
 const StyledVideo = styled.video`
   width: 100%;
   height: auto;
-  background-color: none;
+  background-color: transparent;
   object-fit: cover;
-  margin-top: ${({ theme }) => theme.homeVideoMarginControl};
 `;
 
 const HighlightLink = styled(Link)`

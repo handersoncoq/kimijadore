@@ -23,7 +23,7 @@ const FlexRow = styled.div`
 
 const FlexItem = styled.div`
   flex: 1;
-  padding: 0 1rem;
+  padding: 0;
 `;
 
 const Image = styled.img`
@@ -42,7 +42,7 @@ const Image = styled.img`
 
 const Text = styled.p`
   font-family: "Roboto";
-  font-size: x-small;
+  font-size: small;
   @media (min-width: 768px) {
     font-size: medium;
   }

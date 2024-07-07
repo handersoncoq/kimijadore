@@ -25,7 +25,9 @@ const NotFound = () => {
   return (
     <NotFoundContainer>
       <Title>404</Title>
-      <Message>Oops! The page you're looking for doesn't exist.</Message>
+      <Message>
+        Oops! This page does not exist or hasn't been created yet.
+      </Message>
     </NotFoundContainer>
   );
 };
