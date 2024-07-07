@@ -87,14 +87,14 @@ const Button = styled.button`
 const ContactForm = () => {
   const { theme } = useContext(ThemeContext);
 
-  const SERVICE_ID = "service_4540s9b";
+  const SERVICE_ID = "service_afhbi0e";
   const TEMPLATE_ID = "template_r9cu2m2";
   const PUBLIC_KEY = "89sTsVJnR0IZQ6yCi";
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    Name: "",
+    Email: "",
+    Message: "",
   });
 
   const handleChange = (e) => {
@@ -113,12 +113,12 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.Name || !formData.Email || !formData.Message) {
       alert("Please fill all fields then submit again");
       return;
     }
 
-    if (!validateEmail(formData.email)) {
+    if (!validateEmail(formData.Email)) {
       alert("Please enter a valid email address");
       return;
     }
@@ -126,6 +126,7 @@ const ContactForm = () => {
     emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY).then(
       (response) => {
         console.log("SUCCESS!", response.status, response.text);
+        alert("Your message was sent successfully!");
       },
       (err) => {
         console.log("FAILED...", err);
@@ -133,9 +134,9 @@ const ContactForm = () => {
     );
 
     setFormData({
-      name: "",
-      email: "",
-      message: "",
+      Name: "",
+      Email: "",
+      Message: "",
     });
   };
 
@@ -147,8 +148,8 @@ const ContactForm = () => {
         <Input
           type="text"
           id="name"
-          name="name"
-          value={formData.name}
+          name="Name"
+          value={formData.Name}
           onChange={handleChange}
           required
         />
@@ -156,16 +157,16 @@ const ContactForm = () => {
         <Input
           type="email"
           id="email"
-          name="email"
-          value={formData.email}
+          name="Email"
+          value={formData.Email}
           onChange={handleChange}
           required
         />
         <Label htmlFor="message">Message</Label>
         <TextArea
           id="message"
-          name="message"
-          value={formData.message}
+          name="Message"
+          value={formData.Message}
           onChange={handleChange}
           required
         />

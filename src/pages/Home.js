@@ -37,7 +37,7 @@ const Subtitle = styled.p`
 const VideoContainer = styled.div`
   width: 40%;
   height: auto;
-  background-color: none;
+  background-color: transparent;
   @media (max-width: 768px) {
     width: 100%;
   }
