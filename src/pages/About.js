@@ -6,6 +6,7 @@ import { aboutPics } from "../components/Pictures";
 import Stats from "../components/Stats";
 import PictureLayout from "../components/PictureLayout";
 import Header from "../components/Header";
+import { Link } from "react-router-dom";
 
 const AboutContainer = styled.div`
   margin: 0;
@@ -48,6 +49,11 @@ const Text = styled.p`
   }
 `;
 
+const HighlightLink = styled(Link)`
+  color: ${({ theme }) => theme.hihlightedText};
+  text-decoration: none;
+`;
+
 const About = () => {
   const { theme } = useContext(ThemeContext);
   return (
@@ -59,23 +65,26 @@ const About = () => {
           <Image src={profilePic} alt="Kimi J'adore" />
           <Text>
             Hello! <br /> I am a multi-talented lifestyle content creator who
-            loves to have fun and engage with their audience. My areas of focus
-            are fashion insights, beauty, skincare and lifestyle vlogs. As I
-            love sharing with people how to piece together trendy clothing that
-            are modest. Skin care products and realistically lifestyle vlogs.
+            loves to have fun and engage with my audience. My areas of focus
+            include fashion insights, beauty, skincare, and lifestyle vlogs. I
+            enjoy sharing tips on piecing together trendy, modest clothing,
+            reviewing skincare products, and creating realistic lifestyle vlogs.
           </Text>
           <Text>
             With my significant influence, I have inspired numerous followers to
             grab a camera and delve into content creation. As I continue my
-            journey towards becoming a full time content creator, my content is
-            with motivation and advice for those looking to embark on a similar
-            path. Being my authentic self provides inspiration for others, and I
-            show that no matter what you look like or have access to. you too
-            can feel all that you are.
+            journey towards becoming a full-time content creator, my content is
+            filled with motivation and advice for those looking to embark on a
+            similar path. By being my authentic self, I provide inspiration for
+            others, showing that no matter what you look like or what resources
+            you have, you too can feel confident and empowered.
           </Text>
           <Text>
-            I am interested in brands that share a common mission and goal, and
-            that is to share and engage with the world inclusively.
+            I am interested in collaborating with brands that share a common
+            mission and goal:{" "}
+            <HighlightLink to="/about-me">
+              To Engage With the world Inclusively and Meaningfully.
+            </HighlightLink>
           </Text>
         </FlexItem>
       </FlexRow>
