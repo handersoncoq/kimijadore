@@ -27,7 +27,7 @@ const StyledHr = styled.hr`
   margin: 1.5rem 0;
 `;
 
-const Contents = () => {
+const Content = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -49,4 +49,4 @@ const Contents = () => {
   );
 };
 
-export default Contents;
+export default Content;

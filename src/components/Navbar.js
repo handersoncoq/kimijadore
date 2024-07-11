@@ -122,7 +122,7 @@ const StyledFaMoon = styled(FaMoon)`
 const MenuItems = [
   { name: "Home", link: "/" },
   { name: "About Me", link: "/about-me" },
-  { name: "My Contents", link: "/my-contents" },
+  { name: "My Content", link: "/my-content" },
   { name: "Blog", link: "/blog" },
   { name: "Store", link: "/store" },
   { name: "Contact Me", link: "/contact-me" },
