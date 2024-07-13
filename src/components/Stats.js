@@ -7,6 +7,11 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 1rem 0;
+  font-size: x-small;
+  @media (min-width: 768px) {
+    font-size: medium;
+    margin-bottom: 2em;
+  }
 `;
 
 const StatSpan = styled.span`
@@ -14,24 +19,20 @@ const StatSpan = styled.span`
   flex-direction: column;
   align-items: center;
   margin: 0.3rem 0;
-  margin-right: 1rem;
   text-align: center;
 `;
 
 const Title = styled.div`
-  font-size: 1rem;
   font-weight: bold;
   margin-top: 0.5rem;
 `;
 
 const Subtitle = styled.div`
-  font-size: 0.9rem;
   color: ${({ theme }) => theme.hihlightedText || "#888"};
   margin-top: 0.2rem;
 `;
 
 const GradientIcon = styled.div`
-  font-size: 2rem;
   background: linear-gradient(45deg, red, blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

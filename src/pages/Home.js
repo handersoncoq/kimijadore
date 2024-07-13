@@ -22,6 +22,9 @@ const Title = styled.h1`
   margin-top: ${({ theme }) => theme.homeH1MarginControl};
   margin-right: 0;
   margin-left: 0;
+  @media (min-width: 768px) {
+    font-size: 2.3rem;
+  }
 `;
 
 const Subtitle = styled.p`

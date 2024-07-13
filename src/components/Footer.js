@@ -6,7 +6,6 @@ const Foot = styled.footer`
   text-align: center;
   padding: 1rem;
   margin-top: 3rem;
-  box-shadow: 1px -18px 9px rgba(0, 0, 0, 0.1);
   font-size: smaller;
   width: 100%;
   bottom: 0;
