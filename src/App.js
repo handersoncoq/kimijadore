@@ -13,6 +13,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   margin: auto 1em;
+  background-color: white;
   @media (min-width: 768px) {
     padding: 0.5rem 3rem;
   }

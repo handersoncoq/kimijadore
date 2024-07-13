@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 
 const AboutContainer = styled.div`
   margin: 0;
-  background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
 `;
 

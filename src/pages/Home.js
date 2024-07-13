@@ -11,7 +11,6 @@ const HomeContainer = styled.div`
   text-align: center;
   margin: 0;
   margin-bottom: 5rem;
-  background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
 `;
 

@@ -6,8 +6,8 @@ import { ThemeContext } from "../context/ThemeContext";
 const FormContainer = styled.div`
   display: flex;
   justify-content: center;
+  background-color: ${({ theme }) => theme.background};
   align-items: center;
-  background-color: #f7f7f7;
   border-radius: 7px;
 `;
 

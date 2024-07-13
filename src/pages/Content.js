@@ -9,7 +9,6 @@ import VideoLayout from "../components/VideoLayout";
 
 const ContentContainer = styled.div`
   margin: 0;
-  background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
 `;
 

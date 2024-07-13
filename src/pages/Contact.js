@@ -6,7 +6,6 @@ import ContactForm from "../components/ContactForm";
 
 const ContactContainer = styled.div`
   margin: 0;
-  background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
 `;
 
