@@ -14,7 +14,8 @@ const themes = {
     hamburgerBars: "#000000",
     videoSrc: `${process.env.PUBLIC_URL}/media3.mp4`,
     homeH1MarginControl: "1rem",
-    homeVideoMarginControl: "0",
+    homeVideoMarginControl: "-5.5em",
+    homeVideoBoxShadow: "none",
     aboutPage: {
       background: "#ffc0cb",
       text: "#000000",
@@ -31,7 +32,8 @@ const themes = {
     hamburgerBars: "#ffffff",
     videoSrc: `${process.env.PUBLIC_URL}/media2.mp4`,
     homeH1MarginControl: "2rem",
-    homeVideoMarginControl: "2rem",
+    homeVideoMarginControl: "-5.5rem",
+    homeVideoBoxShadow: "0px 25px 80px rgba(0, 0, 0, 0.15)",
     aboutPage: {
       background: "#000000",
       text: "#ffc0cb",

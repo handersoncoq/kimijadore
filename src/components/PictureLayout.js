@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
 
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
   padding: 1rem 0;
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: translateY(${({ $inView }) => ($inView ? "0" : "20px")});
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 `;
 
 const PictureItem = styled.img`
@@ -32,7 +36,7 @@ const FullScreenBackdrop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 100007;
 `;
 
 const FullScreenImage = styled.img`
@@ -75,6 +79,7 @@ const CloseButton = styled(ControlButton)`
 const PictureLayout = ({ pictureArray }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const openFullScreen = (index) => {
     setCurrentIndex(index);
@@ -99,7 +104,7 @@ const PictureLayout = ({ pictureArray }) => {
 
   return (
     <>
-      <GridContainer>
+      <GridContainer ref={ref} $inView={inView}>
         {pictureArray.map((picture, index) => (
           <PictureItem
             key={index}

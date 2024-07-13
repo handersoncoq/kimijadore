@@ -6,7 +6,6 @@ import { ThemeContext } from "../context/ThemeContext";
 
 const Nav = styled.nav`
   background: ${({ theme }) => theme.background};
-  position: sticky;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -16,6 +15,7 @@ const Nav = styled.nav`
   top: 0;
   margin-bottom: 1.5em;
   z-index: 10002;
+  position: sticky;
 `;
 
 const StyledHr = styled.hr`

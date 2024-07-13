@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   padding: 1rem 0;
+  opacity: ${({ $inView }) => ($inView ? 1 : 0)};
+  transform: translateY(${({ $inView }) => ($inView ? "0" : "20px")});
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 `;
 
 const VideoItem = styled.video`
@@ -33,7 +37,7 @@ const FullScreenBackdrop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 100007;
 `;
 
 const FullScreenVideo = styled.video`
@@ -104,6 +108,7 @@ const GoToContentLink = styled.a`
 const VideoLayout = ({ videoArray }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const openFullScreen = (index) => {
     setCurrentIndex(index);
@@ -130,7 +135,7 @@ const VideoLayout = ({ videoArray }) => {
 
   return (
     <>
-      <GridContainer>
+      <GridContainer ref={ref} $inView={inView}>
         {videoArray.map((video, index) => (
           <VideoItem
             key={index}

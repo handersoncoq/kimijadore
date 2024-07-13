@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useContext, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
+import MakeupPaintBrush from "../components/MakeupPaintBrush";
 
 const HomeContainer = styled.div`
   display: flex;
@@ -37,7 +38,7 @@ const VideoContainer = styled.div`
   width: 40%;
   height: auto;
   background-color: transparent;
-  border-radius: 0.8em;
+  border-radius: 50%;
   margin-top: ${({ theme }) => theme.homeVideoMarginControl};
   @media (max-width: 768px) {
     width: 100%;
@@ -48,8 +49,8 @@ const StyledVideo = styled.video`
   width: 100%;
   height: auto;
   background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
-  border-radius: 0.8em;
+  border-radius: 50%;
+  box-shadow: ${({ theme }) => theme.homeVideoBoxShadow};
   object-fit: cover;
 `;
 
@@ -119,6 +120,7 @@ const Home = () => {
 
   return (
     <HomeContainer theme={theme}>
+      <MakeupPaintBrush />
       <VideoContainer>
         <StyledVideo key={videoKey} ref={videoRef} playsInline muted>
           <source src={theme.videoSrc} type="video/mp4" />
