@@ -8,20 +8,16 @@ const HomeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
   text-align: center;
   margin: 0;
   margin-bottom: 5rem;
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
-
-  @media (max-width: 768px) {
-    height: 72vh;
-  }
 `;
 
 const Title = styled.h1`
-  font-size: 2.7rem;
+  font-size: 1.7rem;
+  font-family: "Roboto";
   color: ${({ theme }) => theme.text};
   margin-top: ${({ theme }) => theme.homeH1MarginControl};
   margin-right: 0;
@@ -29,7 +25,7 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  font-size: 1rem;
+  font-size: larger;
   color: ${({ theme }) => theme.text};
   margin: 0;
 `;
@@ -38,6 +34,7 @@ const VideoContainer = styled.div`
   width: 40%;
   height: auto;
   background-color: transparent;
+  border-radius: 0.8em;
   margin-top: ${({ theme }) => theme.homeVideoMarginControl};
   @media (max-width: 768px) {
     width: 100%;
@@ -48,6 +45,8 @@ const StyledVideo = styled.video`
   width: 100%;
   height: auto;
   background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+  border-radius: 0.8em;
   object-fit: cover;
 `;
 
@@ -123,7 +122,7 @@ const Home = () => {
           Your browser does not support the video tag.
         </StyledVideo>
       </VideoContainer>
-      <Title theme={theme}>Welcome to Kimi J'adore's Avenue</Title>
+      <Title theme={theme}>Fashion | Skincare | Lifestyle</Title>
       <Subtitle theme={theme}>
         Explore my{" "}
         <HighlightLink to="/about-me">captivating journey</HighlightLink> and{" "}

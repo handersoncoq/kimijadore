@@ -6,10 +6,11 @@ import { ThemeContext } from "../context/ThemeContext";
 
 const Nav = styled.nav`
   background: ${({ theme }) => theme.background};
-  padding: 1rem 0;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 1px 18px 9px rgba(0, 0, 0, 0.1);
   width: 100%;
   top: 0;
   margin-bottom: 1.5em;
@@ -48,12 +49,9 @@ const NavList = styled.ul`
   opacity: ${({ open }) => (open ? "1" : "0")};
   pointer-events: ${({ open }) => (open ? "auto" : "none")};
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-  box-shadow: ${({ open }) => (open ? "0 2px 4px rgba(0, 0, 0, 0.1)" : "none")};
+  box-shadow: ${({ open }) =>
+    open ? "1px 18px 9px rgba(0, 0, 0, 0.1)" : "none"};
   margin-top: ${({ open }) => (open ? "1.5rem" : "0")};
-  @media (min-width: 768px) {
-    padding-right: 4rem;
-    padding-left: 4rem;
-  }
 `;
 
 const NavItem = styled.li`

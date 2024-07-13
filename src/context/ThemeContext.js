@@ -13,8 +13,8 @@ const themes = {
     hamburgerBackground: "#ffc0cb",
     hamburgerBars: "#000000",
     videoSrc: `${process.env.PUBLIC_URL}/media3.mp4`,
-    homeH1MarginControl: "-1rem",
-    homeVideoMarginControl: "",
+    homeH1MarginControl: "1rem",
+    homeVideoMarginControl: "0",
     aboutPage: {
       background: "#ffc0cb",
       text: "#000000",

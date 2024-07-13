@@ -31,7 +31,8 @@ const Image = styled.img`
   width: 57%;
   height: auto;
   max-width: 400px;
-  clip-path: ellipse(50% 50% at 50% 50%);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+  border-radius: 50%;
   float: right;
   margin: 0 0 0.5rem 0.5rem;
   @media (min-width: 768px) {
@@ -42,7 +43,6 @@ const Image = styled.img`
 `;
 
 const Text = styled.p`
-  font-family: "Roboto";
   font-size: small;
   @media (min-width: 768px) {
     font-size: medium;
