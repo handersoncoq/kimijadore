@@ -131,7 +131,7 @@ const Home = () => {
       <Subtitle theme={theme}>
         Explore my{" "}
         <HighlightLink to="/about-me">captivating journey</HighlightLink> and{" "}
-        <HighlightLink to="/my-contents">stunning creations</HighlightLink>,
+        <HighlightLink to="/my-content">stunning creations</HighlightLink>,
         brought to you by a passionate and talented micro-influencer.
       </Subtitle>
     </HomeContainer>

@@ -61,6 +61,8 @@ const NavItem = styled.li`
 
 const NavLink = styled(Link)`
   color: ${({ theme }) => theme.text};
+  width: 100%;
+  display: block;
   text-decoration: none;
 
   &:hover {

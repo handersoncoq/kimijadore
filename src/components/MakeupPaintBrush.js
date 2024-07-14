@@ -23,30 +23,33 @@ const MakeupBrushContainer = styled.div`
 `;
 
 const BrushHead = styled.div`
-  width: 21px;
-  height: 27px;
+  width: 17px;
+  height: 22px;
   background-color: #f7e4d5;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   border-top: solid #8b5e3c 1px;
 `;
 
 const BrushFerrule = styled.div`
-  width: 22px;
+  width: 17px;
   height: 15px;
   background-color: #ceccca;
   margin-bottom: -5px;
   border-radius: 0 0 15px 15px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+  z-index: -1;
 `;
 
 const BrushHandle = styled.div`
-  width: 8px;
+  width: 7px;
   height: 110px;
   background-color: #8b5e3c;
   margin-bottom: -5px;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: -2;
 `;
 
 const MakeupPaintBrush = () => {
