@@ -125,7 +125,7 @@ const MenuItems = [
   { name: "About Me", link: "/about-me" },
   { name: "My Content", link: "/my-content" },
   { name: "Blog", link: "/blog" },
-  { name: "Store", link: "/store" },
+  { name: "Store", link: "https://store.kimijadore.com/" },
   { name: "Contact Me", link: "/contact-me" },
 ];
 
