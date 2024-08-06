@@ -124,8 +124,8 @@ const MenuItems = [
   { name: "Home", link: "/" },
   { name: "About Me", link: "/about-me" },
   { name: "My Content", link: "/my-content" },
-  { name: "Blog", link: "/blog" },
-  { name: "Store", link: "https://store.kimijadore.com/" },
+  // { name: "Blog", link: "/blog" },
+  { name: "Go to Store", link: "https://store.kimijadore.com/" },
   { name: "Contact Me", link: "/contact-me" },
 ];
 
