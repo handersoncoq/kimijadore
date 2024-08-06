@@ -132,7 +132,7 @@ const Home = () => {
         Explore my{" "}
         <HighlightLink to="/about-me">captivating journey</HighlightLink> and{" "}
         <HighlightLink to="/my-content">stunning creations</HighlightLink>,
-        brought to you by a passionate and talented micro-influencer.
+        brought to you by a passionate and talented fashion enthusiast.
       </Subtitle>
     </HomeContainer>
   );
